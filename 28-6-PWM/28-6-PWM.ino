@@ -16,8 +16,8 @@ void loop()
       analogWrite(LED_PIN, val);
       delay(30);
     }
-    for(; val>=0; val -= 10){
-      analogWrite(LED_PIN, val);
+    for(; val>=-7; val -= 10){
+      analogWrite(LED_PIN, val == -7 ? 0 : val);
       delay(30);
     }
     delay(1000);

@@ -14,13 +14,14 @@ char auth[] = "CEsD7Ks2dKHvEfAnT26vrUsDal9m0_h7";
 char ssid[] = "ICEHOME_2.4GHz";
 char pass[] = "ICEEARTH21";
 
-
 void sendSensor()
 {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
-  Blynk.virtualWrite(V5,h);
-  Blynk.virtualWrite(V6,t);
+  float f = dht.readTemperature(true);
+  Blynk.virtualWrite(V5, h);
+  Blynk.virtualWrite(V6, t);
+  Blynk.virtualWrite(V7, f);
 }
 void setup()
 {
